@@ -1,8 +1,9 @@
+image = landier/my-docker
+
 build:
-	docker build -t "landier/my-docker" .
+	docker build -t "$(image)" .
 
 deploy:
 	docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
-	docker images
-	docker push landier/my-docker
+	docker push $(image)
 
