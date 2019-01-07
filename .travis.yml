@@ -4,4 +4,11 @@ services:
   - docker
 
 script:
-  - make
+  - make build
+
+deploy:
+  provider: script
+  script:
+    - make deploy
+  on:
+    branch: master
